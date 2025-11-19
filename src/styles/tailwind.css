@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: #0a0a0a;
+    --color-foreground: #ffffff;
+    --color-border: #333333;
+    --color-input: #1a1a1a;
+    --color-ring: #00ff88;
+
+    --color-card: #1a1a1a;
+    --color-card-foreground: #ffffff;
+
+    --color-muted: #333333;
+    --color-muted-foreground: #999999;
+
+    --color-primary: #00ff88;
+    --color-primary-foreground: #000000;
+
+    --color-secondary: #333333;
+    --color-secondary-foreground: #ffffff;
+
+    --color-destructive: #ff4444;
+    --color-destructive-foreground: #ffffff;
+
+    --color-accent: #00ff88;
+    --color-accent-foreground: #000000;
+
+    --color-success: #00cc6a;
+    --color-success-foreground: #ffffff;
+
+    --color-warning: #ffaa00;
+    --color-warning-foreground: #000000;
+
+    --color-error: #ff4444;
+    --color-error-foreground: #ffffff;
+
+    --color-surface: #333333;
+    --color-surface-foreground: #ffffff;
+
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #999999;
+
+    --color-neon-bright: #39ff14;
+    --color-neon-glow: rgba(0, 255, 136, 0.3);
+    --color-neon-border: rgba(0, 255, 136, 0.2);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    backdrop-filter: blur(10px);
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glassmorphism-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+
+  .neon-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+  }
+
+  .holographic-text {
+    background: linear-gradient(45deg, #ffffff, #00ff88, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+
+  .neon-border {
+    border: 2px solid #00ff88;
+  }
+
+  .neon-border-subtle {
+    border: 1px solid rgba(0, 255, 136, 0.2);
+  }
+
+  .floating-sphere {
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #00ff88, #00cc6a);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+  }
+
+  .floating-sphere:hover {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+  }
+
+  .smooth-transition {
+    transition: all 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
